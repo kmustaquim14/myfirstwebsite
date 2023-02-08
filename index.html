@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            background: #fc4a1a;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #f7b733, #fc4a1a);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #f7b733, #fc4a1a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+        
+        .main{
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .myForm{
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        input{
+            padding: 10px 20px;
+            margin: 10px 0;
+            
+        }
+
+        input:focus{
+            outline: 2px solid skyblue;
+        }
+
+        button{
+            padding: 10px 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="main">
+        <form class="myForm">
+            <h1 style="text-align: center;">Registration Form</h1>
+            <input type="text" placeholder="full name">
+            <input type="text" placeholder="mobile">
+            <div>
+                <input type="number" id="otp" placeholder="OTP"> <button onclick="getOTP()">Verify OTP</button>
+            </div> 
+            <input type="email" placeholder="email">
+            <input type="password" placeholder="password">
+            <input type="password" placeholder="confirm password">
+            <button type="submit">Register</button>
+        </form>
+    </div>
+    
+    <script>
+         function getOTP(){
+            var otpIn = document.querySelector("#otp").value;
+
+            if(otpIn == "123456")
+            {
+                alert("OTP has been verified...");
+            }
+            else{
+                alert("OTP is Invalid!");
+            }
+         }
+    </script>
+</body>
+</html>
